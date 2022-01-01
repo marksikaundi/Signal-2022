@@ -4,7 +4,7 @@ import { Button, Input, Image, withTheme } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
 // import { KeyboardAvoidingView } from "react-native";
 
-const LoginScreen = () => { 
+const LoginScreen = ({ navigation }) => { 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -15,7 +15,7 @@ const LoginScreen = () => {
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <StatusBar style="light" />
-            <Text>Login Screen</Text>
+            <Text>CS6OAPA Dev</Text>
 
             <Image source={{
                 uri:
@@ -41,7 +41,7 @@ const LoginScreen = () => {
 
             </View>
             <Button containerStyle={styles.button} onPress={signIn} title="Login" />
-            <Button containerStyle={styles.button} type="outline" title="Register" />
+            <Button onPress={() => navigation.navigate("Register")} containerStyle={styles.button} type="outline" title="Register" /> 
             <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     );
@@ -57,7 +57,9 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: "white",
     },
-    inputContainer: {},
+    inputContainer: {
+        width: 300,
+    },
     button: {
         width: 200,
         marginTop: 10,
