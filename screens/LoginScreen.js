@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { Button, Input, Image } from "react-native-elements";
 import { StatusBar } from "expo-status-bar";
 
-const LoginScreen = () => {
+const LoginScreen = () => { 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -14,25 +14,26 @@ const LoginScreen = () => {
 
             <Image source={{
                 uri:
-                "https://upload.wikimedia.org/wikipedia/commons/4/41/Signal_ultramarine_icon.svg"
+                "https://blog.mozilla.org/internetcitizen/files/2018/08/signal-logo.png"
             }}
             style={{ width: 200, height: 200 }}
             />
             <View style={styles.inputContainer}>
-                <input 
-                placeholder="Email" 
-                autoFocus 
-                type="email" 
-                value={email} 
-                onChangeText={(text) => setEmail(text)} 
+                <Input placeholder="Email"
+                 autoFocus
+                 type="email"
+                 value={email} 
+                 onChangeText={(text) => setEmail(text)}
                 />
-                <input placeholder="Password" secureTextEntry type="password"
-                placeholder="Password" 
-                autoFocus 
-                type="password" 
-                value={password} 
-                onChangeText={(text) => setPassword(text)} 
-                />
+                {/* password input  */}
+                <Input placeholder="Password" secureTextEntry
+                 type="password"
+                 value={password} 
+                 onChangeText={(text) => setPassword(text)}
+                 
+                 />
+ 
+
             </View>
         </View>
     );
@@ -41,7 +42,5 @@ const LoginScreen = () => {
 export default LoginScreen
 
 const styles = StyleSheet.create({
-    inputContainer: {
-        
-    },
+    inputContainer: {},
 });
